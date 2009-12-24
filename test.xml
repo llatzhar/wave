@@ -5,6 +5,7 @@
 </ModulePrefs>
 <Content type="html">
 <![CDATA[ 
+
 <div id="content_div" style="height: 50px;"></div>
     <script type="text/javascript">
 
@@ -13,6 +14,7 @@
     function buttonClicked() {
       var value = parseInt(wave.getState().get('count', '0'));
       wave.getState().submitDelta({'count': value + 1});
+      wave.getState().submitDelta({'last': wave.getViewer().getId()});
     }
 
     function stateUpdated() {
@@ -20,7 +22,7 @@
         div.innerHTML = "The count is 0."
       }
       else {
-        div.innerHTML = "The count is " + wave.getState().get('count');
+        div.innerHTML = "The count is " + wave.getState().get('count') + wave.getState().get('last');
       } 
     }
  
