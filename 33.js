@@ -1,6 +1,6 @@
 var reset = function() {
     d = {};
-    d['over'] = 0;
+    d['over'] = null;
     d['move'] = 0;
     d['white'] = null;
     d['black'] = null;
@@ -124,6 +124,7 @@ function stateUpdated() {
         r = is_over();
         if (r) {
             $("#result").html('winner: ' + r);
+            wave.getState().submitDelta({'over': 'over'});
         } else {
             $("#result").html('');
         }
