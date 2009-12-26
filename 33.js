@@ -17,20 +17,23 @@ var dump_name = function(object) {
 */
 
 // Reset values
-reset = function() {
-    //\todo 
+var reset = function() {
     wave.getState().submitDelta({'move': 0});
     wave.getState().submitDelta({'black': [null, null, null]});
     wave.getState().submitDelta({'white': [null, null, null]});
 }
 
-cell_clicked = function() {
+var cell_clicked = function() {
     $(this).css('backgroundColor', 'Yellow');
     var move = wave.getState().get('move');
+    wave.getState().submitDelta({'move': move + 1});
     if (move % 2 == 0) {
         a = wave.getState().get('black');
     } else {
         a = wave.getState().get('white');
+    }
+    if (!a) {
+        a = [null, null, null];
     }
     a[move % 3] = $(this).attr("id");
     if (move % 2 == 0) {
@@ -44,7 +47,7 @@ $(function() {
     bind_cells();
 });
 
-bind_cells = function() {
+var bind_cells = function() {
     for (var i = 0; i < 9; i++) {
         $("#c" + i).bind('click', cell_clicked);
     }
