@@ -25,7 +25,7 @@ var reset = function() {
 
 var cell_clicked = function() {
     $(this).css('backgroundColor', 'Yellow');
-    var move = wave.getState().get('move');
+    var move = parseInt(wave.getState().get('move'));
     wave.getState().submitDelta({'move': move + 1});
     if (move % 2 == 0) {
         a = wave.getState().get('black');
