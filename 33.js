@@ -9,15 +9,23 @@ var reset = function() {
     wave.getState().submitDelta(d);
 }
 
+var turn_name = function(move) {
+    if (move % 2) {
+        return 'white';
+    } else {
+        return 'black';
+    }
+}
+
 var cell_clicked = function() {
     d = {};
-    
     var move = parseInt(wave.getState().get('move'));
+    var t = turn_name(move);
     viewer = wave.getViewer().getId();
-    if (!wave.getState().get('black')) {
-        d['black'] = viewer;
+    if (!wave.getState().get(t)) {
+        d[t] = viewer;
     } else {
-        if (wave.getState().get('black') != viewer) {
+        if (wave.getState().get(t) != viewer) {
             return;
         }
     }
@@ -45,7 +53,8 @@ function stateUpdated() {
     if (!wave.getState().get('move')) {
         div.innerHTML = "not yet.";
     } else {
-        div.innerHTML = "turn:" + wave.getState().get('move');
+        var move = wave.getState().get('move');
+        div.innerHTML = "turn: " + turn_name(move) + "(" + move + ")"
     }
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
