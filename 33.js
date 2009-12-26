@@ -80,7 +80,7 @@ var is_over = function() {
         return false;
     }
 
-    if (parseInt(wave.getState().get('move')) < 5) {
+    if (parseInt(wave.getState().get('move')) > 4) {
         var blacks = [];
         blacks[0] = parseInt(wave.getState().get('m0').replace('c', ''));
         blacks[1] = parseInt(wave.getState().get('m2').replace('c', ''));
@@ -91,7 +91,7 @@ var is_over = function() {
         }
     }
 
-    if (parseInt(wave.getState().get('move')) < 6) {
+    if (parseInt(wave.getState().get('move')) > 5) {
         var whites = [];
         whites[0] = parseInt(wave.getState().get('m1').replace('c', ''));
         whites[1] = parseInt(wave.getState().get('m3').replace('c', ''));
