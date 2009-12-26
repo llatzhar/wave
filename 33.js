@@ -55,6 +55,9 @@ function stateUpdated() {
     } else {
         div.innerHTML = "turn:" + wave.getState().get('move');
     }
+    for (var i = 0; i < 9; i++) {
+        $("#c" + i).css('backgroundColor', 'White');
+    }
 
     for (var i = 0; i < 6; i++) {
         var m = wave.getState().get("m" + i);
@@ -65,22 +68,6 @@ function stateUpdated() {
                 $("#" + m).css('backgroundColor', 'Blue');
             }
         }
-    }
-    if (wave.getState().get('black')) {
-        for (var i = 0; i < 3; i++) {
-            $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Blue');
-        }
-    } else {
-        //document.getElementById('b').innerHTML = "black is null";
-    }
-
-    document.getElementById('b').innerHTML = wave.getState().get('arr') + ':' + wave.getState().get('obj');
-    if (wave.getState().get('white')) {
-        for (var i = 0; i < 3; i++) {
-            $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Red');
-        }
-    } else {
-        document.getElementById('w').innerHTML = "white is null";
     }
 } 
 
