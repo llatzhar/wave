@@ -72,9 +72,9 @@ var is_line = function(stones) {
 
 var is_over = function() {
     var blacks = [];
-    blacks[0] = parseInt(wave.getState().get('m1').split('c', ''));
-    blacks[1] = parseInt(wave.getState().get('m3').split('c', ''));
-    blacks[2] = parseInt(wave.getState().get('m5').split('c', ''));
+    blacks[0] = parseInt(wave.getState().get('m1').replace('c', ''));
+    blacks[1] = parseInt(wave.getState().get('m3').replace('c', ''));
+    blacks[2] = parseInt(wave.getState().get('m5').replace('c', ''));
     $("#debug").html("0=" + blacks[0] + " 1=" + blacks[1] + " 2=" + blacks[2]);
     if (is_line(blacks.sort())) {
         return "black";
