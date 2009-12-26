@@ -19,8 +19,8 @@ var dump_name = function(object) {
 // Reset values
 var reset = function() {
     delta = {};
-    delta['move'] = 0;
-    delta['black'] = ['c1', 'c2', 'c3'];
+    //delta['move'] = 0;
+    //delta['black'] = {};
     delta['white'] = ['c4', 'c5', 'c6'];
     wave.getState().submitDelta(delta);
     /*
