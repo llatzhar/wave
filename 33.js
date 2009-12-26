@@ -128,6 +128,8 @@ function stateUpdated() {
         } else {
             $("#result").html('winner: ');
         }
+    } else {
+        $("#result").html('stop.');
     }
 }
 
