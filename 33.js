@@ -64,11 +64,15 @@ function stateUpdated() {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Blue');
         }
+    } else {
+        document.getElementById('b').innerHTML = "black is null";
     }
     if (wave.getState().get('white')) {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Red');
         }
+    } else {
+        document.getElementById('w').innerHTML = "white is null";
     }
 } 
 

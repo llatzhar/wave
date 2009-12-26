@@ -14,6 +14,8 @@
 	  <tr><td id="c3">4</td><td id="c4">5</td><td id="c5">6</td></tr>
 	  <tr><td id="c6">7</td><td id="c7">8</td><td id="c8">9</td></tr>
 	</table>
+	<div id="b"></div>
+	<div id="w"></div>
 	<input type=button value="Reset" id="butReset" onClick="reset()">
 ]]> 
 </Content>
