@@ -48,7 +48,46 @@ var bind_cells = function() {
     }
 }
 
-//http://github.com/llatzhar/wave/raw/master/n.gif
+var HITS = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+];
+
+var is_line = function(stones) {
+    for (h = 0; h < HITS.length; h++) {
+        if ((stones[0] == HITS[h][0]) &&
+            (stones[1] == HITS[h][1]) &&
+            (stones[2] == HITS[h][2])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+var is_over = function() {
+    var blacks = [];
+    blacks[0] = parseInt(wave.getState().get('m1').split('c', ''));
+    blacks[1] = parseInt(wave.getState().get('m3').split('c', ''));
+    blacks[2] = parseInt(wave.getState().get('m5').split('c', ''));
+    if is_line(blacks.sort()) {
+        return "black";
+    }
+    var whites = [];
+    whites[0] = parseInt(wave.getState().get('m2').split('c', ''));
+    whites[1] = parseInt(wave.getState().get('m4').split('c', ''));
+    whites[2] = parseInt(wave.getState().get('m6').split('c', ''));
+    if is_line(whites.sort()) {
+        return "white";
+    }
+    return null;
+}
+
 function stateUpdated() {
     if (!wave.getState().get('move')) {
         $('#turn').html = "not yet.";
@@ -73,7 +112,12 @@ function stateUpdated() {
             }
         }
     }
-} 
+
+    r = is_over();
+    if (r) {
+        $('#result').html('winner: ' + r);
+    }
+}
 
 function init() {
     if (wave && wave.isInWaveContainer()) {
