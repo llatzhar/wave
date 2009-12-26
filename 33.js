@@ -27,6 +27,7 @@ var cell_clicked = function() {
     $(this).css('backgroundColor', 'Yellow');
     var move = parseInt(wave.getState().get('move'));
     wave.getState().submitDelta({'move': move + 1});
+    wave.getState().submitDelta({'arr': [1, 2, 3]});
     if (move % 2 == 0) {
         a = wave.getState().get('black');
     } else {
@@ -65,8 +66,10 @@ function stateUpdated() {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Blue');
         }
     } else {
-        document.getElementById('b').innerHTML = "black is null";
+        //document.getElementById('b').innerHTML = "black is null";
     }
+
+    document.getElementById('b').innerHTML = wave.getState().get('arr');
     if (wave.getState().get('white')) {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Red');

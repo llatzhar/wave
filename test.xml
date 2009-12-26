@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-<ModulePrefs title="3 Stone" height="120">
+<ModulePrefs title="3 Stone" height="300">
   <Require feature="wave" />
 </ModulePrefs>
 <Content type="html">
