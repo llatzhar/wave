@@ -35,7 +35,7 @@ var cell_clicked = function() {
     var move = parseInt(wave.getState().get('move'));
     d['move'] = move + 1;
     d["m" + (move % 6)] = $(this).attr("id");
-    wave.getState().submitDelta(delta);
+    wave.getState().submitDelta(d);
 }
 
 $(function() {
