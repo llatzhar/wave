@@ -15,9 +15,9 @@ var cell_clicked = function() {
     var move = parseInt(wave.getState().get('move'));
     viewer = wave.getViewer().getId();
     if (!wave.getState().get('black')) {
-        d['black'] = viewer.getId();
+        d['black'] = viewer;
     } else {
-        if (wave.getState().get('black') != viewer.getId) {
+        if (wave.getState().get('black') != viewer) {
             return;
         }
     }
