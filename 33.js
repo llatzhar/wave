@@ -29,8 +29,6 @@ var reset = function() {
 }
 
 var cell_clicked = function() {
-    $(this).css('backgroundColor', 'Yellow');
-    
     d = {};
     var move = parseInt(wave.getState().get('move'));
     d['move'] = move + 1;
@@ -56,7 +54,7 @@ function stateUpdated() {
         div.innerHTML = "turn:" + wave.getState().get('move');
     }
     for (var i = 0; i < 9; i++) {
-        $("#c" + i).css('backgroundColor', 'White');
+        $("#c" + i).css('backgroundColor', 'Black');
     }
 
     for (var i = 0; i < 6; i++) {
