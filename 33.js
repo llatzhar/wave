@@ -126,7 +126,7 @@ function stateUpdated() {
             $("#result").html('winner: ' + r);
             wave.getState().submitDelta({'over': 'over'});
         } else {
-            $("#result").html('');
+            $("#result").html('winner: ');
         }
     }
 }
