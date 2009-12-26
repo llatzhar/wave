@@ -19,20 +19,27 @@ var dump_name = function(object) {
 var reset = function() {
     d = {};
     d['move'] = 0;
+    d['m0'] = null;
     d['m1'] = null;
     d['m2'] = null;
     d['m3'] = null;
     d['m4'] = null;
     d['m5'] = null;
-    d['m6'] = null;
     wave.getState().submitDelta(d);
 }
 
 var cell_clicked = function() {
-    d = {};
+    clicked = $(this).attr("id");
+    for (var i = 0; i < 6; i++) {
+        if (wave.getState().get('m' + i) == clicked) {
+            return;
+        }
+    }
+    
     var move = parseInt(wave.getState().get('move'));
+    d = {};
     d['move'] = move + 1;
-    d["m" + (move % 6)] = $(this).attr("id");
+    d["m" + (move % 6)] = clicked;
     wave.getState().submitDelta(d);
 }
 
