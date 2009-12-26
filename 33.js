@@ -80,7 +80,7 @@ var is_over = function() {
     blacks[0] = parseInt(wave.getState().get('m1').replace('c', ''));
     blacks[1] = parseInt(wave.getState().get('m3').replace('c', ''));
     blacks[2] = parseInt(wave.getState().get('m5').replace('c', ''));
-    $("#debug").html("0=" + blacks[0] + " 1=" + blacks[1] + " 2=" + blacks[2]);
+    $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2]);
     if (is_line(blacks.sort())) {
         return "black";
     }
