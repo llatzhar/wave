@@ -75,6 +75,7 @@ var is_over = function() {
     blacks[0] = parseInt(wave.getState().get('m1').split('c', ''));
     blacks[1] = parseInt(wave.getState().get('m3').split('c', ''));
     blacks[2] = parseInt(wave.getState().get('m5').split('c', ''));
+    $('#debug').html(blacks);
     if (is_line(blacks.sort())) {
         return "black";
     }
@@ -82,6 +83,7 @@ var is_over = function() {
     whites[0] = parseInt(wave.getState().get('m2').split('c', ''));
     whites[1] = parseInt(wave.getState().get('m4').split('c', ''));
     whites[2] = parseInt(wave.getState().get('m6').split('c', ''));
+    //$('#debug').html(blacks);
     if (is_line(whites.sort())) {
         return "white";
     }
@@ -114,9 +116,7 @@ function stateUpdated() {
     }
 
     r = is_over();
-    if (r) {
-        $('#result').html('winner: ' + r);
-    }
+    $('#result').html('winner: ' + r);
 }
 
 function init() {
