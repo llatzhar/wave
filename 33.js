@@ -27,7 +27,18 @@ var cell_clicked = function() {
     $(this).css('backgroundColor', 'Yellow');
     var move = parseInt(wave.getState().get('move'));
     wave.getState().submitDelta({'move': move + 1});
-    wave.getState().submitDelta({'arr': [1, 2, 3]});
+
+    // test object
+    var obj = {};
+    obj['1'] = '2';
+    wave.getState().submitDelta({'obj': obj});
+
+    // test array
+    var ar = [];
+    ar[0] = 8;
+    ar[1] = 2;
+    wave.getState().submitDelta({'arr': ar});
+
     if (move % 2 == 0) {
         a = wave.getState().get('black');
     } else {
@@ -69,7 +80,7 @@ function stateUpdated() {
         //document.getElementById('b').innerHTML = "black is null";
     }
 
-    document.getElementById('b').innerHTML = wave.getState().get('arr');
+    document.getElementById('b').innerHTML = wave.getState().get('arr') + ':' + wave.getState().get('obj');
     if (wave.getState().get('white')) {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Red');
