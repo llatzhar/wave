@@ -18,9 +18,15 @@ var dump_name = function(object) {
 
 // Reset values
 var reset = function() {
+    delta = {};
+    delta['move'] = 0;
+    delta['black'] = ['c1', 'c2', 'c3'];
+    delta['white'] = ['c4', 'c5', 'c6'];
+    wave.getState().submitDelta(delta);
+    /*
     wave.getState().submitDelta({'move': 0});
     wave.getState().submitDelta({'black': [null, null, null]});
-    wave.getState().submitDelta({'white': [null, null, null]});
+    wave.getState().submitDelta({'white': [null, null, null]});*/
 }
 
 var cell_clicked = function() {
