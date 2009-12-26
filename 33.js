@@ -76,6 +76,9 @@ var is_line = function(stones) {
 }
 
 var is_over = function() {
+    if (!wave.getState().get('move') || (parseInt(wave.getState().get('move')) < 5)) {
+        return false;
+    }
     var blacks = [];
     blacks[0] = parseInt(wave.getState().get('m0').replace('c', ''));
     blacks[1] = parseInt(wave.getState().get('m2').replace('c', ''));
