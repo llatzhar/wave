@@ -16,49 +16,26 @@ var dump_name = function(object) {
 }
 */
 
-// Reset values
 var reset = function() {
-    delta = {};
-    //delta['move'] = 0;
-    //delta['black'] = {};
-    delta['white'] = ['c4', 'c5', 'c6'];
-    wave.getState().submitDelta(delta);
-    /*
-    wave.getState().submitDelta({'move': 0});
-    wave.getState().submitDelta({'black': [null, null, null]});
-    wave.getState().submitDelta({'white': [null, null, null]});*/
+    d = {};
+    d['move'] = 0;
+    d['m1'] = null;
+    d['m2'] = null;
+    d['m3'] = null;
+    d['m4'] = null;
+    d['m5'] = null;
+    d['m6'] = null;
+    wave.getState().submitDelta(d);
 }
 
 var cell_clicked = function() {
     $(this).css('backgroundColor', 'Yellow');
+    
+    d = {};
     var move = parseInt(wave.getState().get('move'));
-    wave.getState().submitDelta({'move': move + 1});
-
-    // test object
-    var obj = {};
-    obj['1'] = '2';
-    wave.getState().submitDelta({'obj': obj});
-
-    // test array
-    var ar = [];
-    ar[0] = 8;
-    ar[1] = 2;
-    wave.getState().submitDelta({'arr': ar});
-
-    if (move % 2 == 0) {
-        a = wave.getState().get('black');
-    } else {
-        a = wave.getState().get('white');
-    }
-    if (!a) {
-        a = [null, null, null];
-    }
-    a[move % 3] = $(this).attr("id");
-    if (move % 2 == 0) {
-        wave.getState().submitDelta({'black': a});
-    } else {
-        wave.getState().submitDelta({'white': a});
-    }
+    d['move'] = move + 1;
+    d["m" + (move % 6)] = $(this).attr("id");
+    wave.getState().submitDelta(delta);
 }
 
 $(function() {
@@ -77,6 +54,17 @@ function stateUpdated() {
         div.innerHTML = "not yet.";
     } else {
         div.innerHTML = "turn:" + wave.getState().get('move');
+    }
+
+    for (var i = 0; i < 6; i++) {
+        var m = wave.getState().get("m" + i);
+        if (m) {
+            if (i % 2) {
+                $("#" + m).css('backgroundColor', 'Red');
+            } else {
+                $("#" + m).css('backgroundColor', 'Blue');
+            }
+        }
     }
     if (wave.getState().get('black')) {
         for (var i = 0; i < 3; i++) {
