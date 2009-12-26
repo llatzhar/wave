@@ -47,8 +47,8 @@ function stateUpdated() {
     } else {
         div.innerHTML = "turn:" + wave.getState().get('move');
     }
-    $("b").html("black:" + wave.getState().get('black'));
-    $("w").html("white:" + wave.getState().get('white'));
+    $("#b").html("black:" + wave.getState().get('black'));
+    $("#w").html("white:" + wave.getState().get('white'));
     
     for (var i = 0; i < 9; i++) {
         $("#c" + i).css('backgroundColor', 'Black');

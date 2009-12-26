@@ -9,13 +9,13 @@
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/33.js"></script>
 	<script type="text/javascript">gadgets.util.registerOnLoadHandler(init);</script>
 	<div id="turn"></div>
+	<div id="b"></div>
+	<div id="w"></div>
 	<table id="board">
 	  <tr><td id="c0">1</td><td id="c1">2</td><td id="c2">3</td></tr>
 	  <tr><td id="c3">4</td><td id="c4">5</td><td id="c5">6</td></tr>
 	  <tr><td id="c6">7</td><td id="c7">8</td><td id="c8">9</td></tr>
 	</table>
-	<div id="b"></div>
-	<div id="w"></div>
 	<input type=button value="Reset" id="butReset" onClick="reset()">
 ]]> 
 </Content>
