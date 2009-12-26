@@ -1,5 +1,6 @@
 var reset = function() {
     d = {};
+    d['over'] = 0;
     d['move'] = 0;
     d['white'] = null;
     d['black'] = null;
@@ -18,6 +19,10 @@ var turn_name = function(move) {
 }
 
 var cell_clicked = function() {
+    if (wave.getState().get("over")) {
+        return;
+    }
+
     d = {};
     var move = parseInt(wave.getState().get('move'));
     var t = turn_name(move);
@@ -115,8 +120,14 @@ function stateUpdated() {
         }
     }
 
-    r = is_over();
-    $("#result").html('winner: ' + r);
+    if (!wave.getState().get('over')) {
+        r = is_over();
+        if (r) {
+            $("#result").html('winner: ' + r);
+        } else {
+            $("#result").html('');
+        }
+    }
 }
 
 function init() {
