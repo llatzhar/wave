@@ -48,28 +48,28 @@ var bind_cells = function() {
     }
 }
 
+//http://github.com/llatzhar/wave/raw/master/n.gif
 function stateUpdated() {
-    var div = document.getElementById('turn');
     if (!wave.getState().get('move')) {
-        div.innerHTML = "not yet.";
+        $('#turn').html = "not yet.";
     } else {
         var move = wave.getState().get('move');
-        div.innerHTML = "turn: " + turn_name(move) + "(" + move + ")"
+        $('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
     }
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
     
     for (var i = 0; i < 9; i++) {
-        $("#c" + i).css('backgroundColor', 'Black');
+        $("#c" + i).html('<img src="http://github.com/llatzhar/wave/raw/master/n.gif">');
     }
 
     for (var i = 0; i < 6; i++) {
         var m = wave.getState().get("m" + i);
         if (m) {
             if (i % 2) {
-                $("#" + m).css('backgroundColor', 'Red');
+                $("#" + m).html('<img src="http://github.com/llatzhar/wave/raw/master/w.gif">');
             } else {
-                $("#" + m).css('backgroundColor', 'Blue');
+                $("#" + m).html('<img src="http://github.com/llatzhar/wave/raw/master/b.gif">');
             }
         }
     }
