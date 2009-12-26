@@ -43,9 +43,11 @@ var cell_clicked = function() {
     wave.getState().submitDelta(d);
 }
 
+/*
 $(function() {
     bind_cells();
 });
+ */
 
 var bind_cells = function() {
     for (var i = 0; i < 9; i++) {
@@ -79,5 +81,6 @@ function stateUpdated() {
 function init() {
     if (wave && wave.isInWaveContainer()) {
         wave.setStateCallback(stateUpdated);
+        bind_cells();
     }
 }
