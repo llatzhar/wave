@@ -89,6 +89,7 @@ var is_over = function() {
     whites[1] = parseInt(wave.getState().get('m3').split('c', ''));
     whites[2] = parseInt(wave.getState().get('m5').split('c', ''));
     //$('#debug').html(blacks);
+    $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2] + " w=" + whites[0] + whites[1] + whites[2]);
     if (is_line(whites.sort())) {
         return "white";
     }
