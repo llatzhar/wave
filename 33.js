@@ -76,25 +76,31 @@ var is_line = function(stones) {
 }
 
 var is_over = function() {
-    if (!wave.getState().get('move') || (parseInt(wave.getState().get('move')) < 5)) {
+    if (!wave.getState().get('move')) {
         return false;
     }
-    var blacks = [];
-    blacks[0] = parseInt(wave.getState().get('m0').replace('c', ''));
-    blacks[1] = parseInt(wave.getState().get('m2').replace('c', ''));
-    blacks[2] = parseInt(wave.getState().get('m4').replace('c', ''));
-    $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2]);
-    if (is_line(blacks.sort())) {
-        return "black";
+
+    if (parseInt(wave.getState().get('move')) < 5) {
+        var blacks = [];
+        blacks[0] = parseInt(wave.getState().get('m0').replace('c', ''));
+        blacks[1] = parseInt(wave.getState().get('m2').replace('c', ''));
+        blacks[2] = parseInt(wave.getState().get('m4').replace('c', ''));
+        $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2]);
+        if (is_line(blacks.sort())) {
+            return "black";
+        }
     }
-    var whites = [];
-    whites[0] = parseInt(wave.getState().get('m1').replace('c', ''));
-    whites[1] = parseInt(wave.getState().get('m3').replace('c', ''));
-    whites[2] = parseInt(wave.getState().get('m5').replace('c', ''));
-    //$('#debug').html(blacks);
-    $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2] + " w=" + whites[0] + whites[1] + whites[2]);
-    if (is_line(whites.sort())) {
-        return "white";
+
+    if (parseInt(wave.getState().get('move')) < 6) {
+        var whites = [];
+        whites[0] = parseInt(wave.getState().get('m1').replace('c', ''));
+        whites[1] = parseInt(wave.getState().get('m3').replace('c', ''));
+        whites[2] = parseInt(wave.getState().get('m5').replace('c', ''));
+        //$('#debug').html(blacks);
+        $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2] + " w=" + whites[0] + whites[1] + whites[2]);
+        if (is_line(whites.sort())) {
+            return "white";
+        }
     }
     return null;
 }
