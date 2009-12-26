@@ -60,12 +60,12 @@ function stateUpdated() {
     } else {
         div.innerHTML = "turn:" + wave.getState().get('move');
     }
-    if (!wave.getState().get('black')) {
+    if (wave.getState().get('black')) {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Blue');
         }
     }
-    if (!wave.getState().get('white')) {
+    if (wave.getState().get('white')) {
         for (var i = 0; i < 3; i++) {
             $("#" + wave.getState().get('black')[i]).css('backgroundColor', 'Red');
         }
