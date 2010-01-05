@@ -9,8 +9,8 @@
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/33.js"></script>
 	<script type="text/javascript">gadgets.util.registerOnLoadHandler(init);</script>
 	<div id="title">3x3</div>
-	move: <div id="move"></div>
-	turn: <div id="turn"></div>
+	<div>move: <span id="move"></span></div>
+	<div>turn: <span id="turn"></span></div>
 	<div id="b"></div>
 	<div id="w"></div>
 	<div id="result"></div>
