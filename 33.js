@@ -113,6 +113,7 @@ function stateUpdated() {
         //$('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
         $("#turn").html = move + "moves.";
     }
+    $("#turn").html = "turn test";
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
     
