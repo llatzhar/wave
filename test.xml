@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/jquery.js"></script>
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/33.js"></script>
 	<script type="text/javascript">gadgets.util.registerOnLoadHandler(init);</script>
+	<div id="title">3x3</div>
 	<div id="turn"></div>
 	<div id="b"></div>
 	<div id="w"></div>
