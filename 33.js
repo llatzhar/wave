@@ -113,8 +113,8 @@ function stateUpdated() {
         $("#move").html(move);
         $("#turn").html(turn_name(move));
     }
-    $("#b").html("black:" + wave.getState().get('black'));
-    $("#w").html("white:" + wave.getState().get('white'));
+    $("#b").html(wave.getState().get('black'));
+    $("#w").html(wave.getState().get('white'));
     
     for (var i = 0; i < 9; i++) {
         $("#c" + i).html('<img src="http://github.com/llatzhar/wave/raw/master/n.gif">');
