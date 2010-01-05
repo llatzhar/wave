@@ -106,13 +106,11 @@ var is_over = function() {
 
 function stateUpdated() {
     if (!wave.getState().get('move')) {
-        $("#turn").html = "not yet.";
+        $("#turn").html("not yet.");
     } else {
         var move = wave.getState().get('move');
-        //$('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
-        $("#turn").html = move + "moves.";
+        $('#turn').html("turn: " + turn_name(move) + "(" + move + ")");
     }
-    $("#stat").html = "turn test";
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
     
