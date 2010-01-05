@@ -96,7 +96,6 @@ var is_over = function() {
         whites[0] = parseInt(wave.getState().get('m1').replace('c', ''));
         whites[1] = parseInt(wave.getState().get('m3').replace('c', ''));
         whites[2] = parseInt(wave.getState().get('m5').replace('c', ''));
-        //$('#debug').html(blacks);
         $("#debug").html("b=" + blacks[0] + blacks[1] + blacks[2] + " w=" + whites[0] + whites[1] + whites[2]);
         if (is_line(whites.sort())) {
             return "white";
@@ -113,7 +112,7 @@ function stateUpdated() {
         //$('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
         $("#turn").html = move + "moves.";
     }
-    $("#turn").html = "turn test";
+    $("#stat").html = "turn test";
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
     

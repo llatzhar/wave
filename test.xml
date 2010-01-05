@@ -18,6 +18,7 @@
 	  <tr><td id="c3"></td><td id="c4"></td><td id="c5"></td></tr>
 	  <tr><td id="c6"></td><td id="c7"></td><td id="c8"></td></tr>
 	</table>
+	<div id="stat"></div>
 	<input type=button value="Reset" id="butReset" onClick="reset()">
 ]]> 
 </Content>
