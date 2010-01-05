@@ -110,7 +110,8 @@ function stateUpdated() {
         $('#turn').html = "not yet.";
     } else {
         var move = wave.getState().get('move');
-        $('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
+        //$('#turn').html = "turn: " + turn_name(move) + "(" + move + ")"
+        $('#turn').html = move + "moves.";
     }
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));
