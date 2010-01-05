@@ -105,11 +105,13 @@ var is_over = function() {
 }
 
 function stateUpdated() {
-    if (!wave.getState().get('move')) {
-        $("#turn").html("not yet.");
+    var move = wave.getState().get('move');
+    if (move == null) {
+        $("#move").html("not yet.");
+        $("#turn").html("black");
     } else {
-        var move = wave.getState().get('move');
-        $('#turn').html("turn: " + turn_name(move) + "(" + move + ")");
+        $("#move").html(move);
+        $("#turn").html(turn_name(move));
     }
     $("#b").html("black:" + wave.getState().get('black'));
     $("#w").html("white:" + wave.getState().get('white'));

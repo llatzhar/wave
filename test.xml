@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
+<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 <ModulePrefs title="3 Stone" height="300">
   <Require feature="wave" />
@@ -9,7 +9,8 @@
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/33.js"></script>
 	<script type="text/javascript">gadgets.util.registerOnLoadHandler(init);</script>
 	<div id="title">3x3</div>
-	<div id="turn"></div>
+	move: <div id="move"></div>
+	turn: <div id="turn"></div>
 	<div id="b"></div>
 	<div id="w"></div>
 	<div id="result"></div>
