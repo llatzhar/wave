@@ -146,5 +146,9 @@ function init() {
     if (wave && wave.isInWaveContainer()) {
         wave.setStateCallback(stateUpdated);
         bind_cells();
+
+        if (wave.getState().get('move') == null) {
+            reset();
+        }
     }
 }

@@ -9,16 +9,18 @@
 	<script type="text/javascript" src="http://github.com/llatzhar/wave/raw/master/33.js"></script>
 	<script type="text/javascript">gadgets.util.registerOnLoadHandler(init);</script>
 	<div id="title">3x3</div>
-	<div>move: <span id="move"></span></div>
-	<div>next move: <span id="turn"></span></div>
 	<div>black: <span id="b"></span></div>
 	<div>white: <span id="w"></span></div>
-	<div id="result"></div>
+	<div>move: <span id="move"></span></div>
+	<div>next move: <span id="turn"></span></div>
 	<table id="board">
-	  <tr><td id="c0"></td><td id="c1"></td><td id="c2"></td></tr>
-	  <tr><td id="c3"></td><td id="c4"></td><td id="c5"></td></tr>
-	  <tr><td id="c6"></td><td id="c7"></td><td id="c8"></td></tr>
+		<tbody>
+			<tr><td id="c0"></td><td id="c1"></td><td id="c2"></td></tr>
+			<tr><td id="c3"></td><td id="c4"></td><td id="c5"></td></tr>
+			<tr><td id="c6"></td><td id="c7"></td><td id="c8"></td></tr>
+		</tbody>
 	</table>
+	<div id="result"></div>
 	<input type=button value="Reset" id="butReset" onClick="reset()">
 ]]> 
 </Content>
