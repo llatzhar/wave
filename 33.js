@@ -107,8 +107,9 @@ var is_over = function() {
 function stateUpdated() {
     var move = wave.getState().get('move');
     if (move == null) {
-        $("#move").html("not yet.");
-        $("#turn").html("black");
+        reset();
+        //$("#move").html("not yet.");
+        //$("#turn").html("black");
     } else {
         $("#move").html(move);
         $("#turn").html(turn_name(move));
@@ -146,9 +147,5 @@ function init() {
     if (wave && wave.isInWaveContainer()) {
         wave.setStateCallback(stateUpdated);
         bind_cells();
-
-        if (wave.getState() == null) {
-            reset();
-        }
     }
 }
